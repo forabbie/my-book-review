@@ -1,0 +1,12 @@
+<div class="row mt-3">
+  <% @books.each do |book| %>
+    <div class="col-md-3">
+      <a href="books/<%= book.id %>" class="card" id="bookList">
+        <%= image_tag book.book_img.url(:book_index), class: "card-img-top" %>
+        <span class="card-title text-center title"><%= book.title %></span> <br>
+        <span class="author">by: <%= book.author %></span>
+      </a>
+    </div>
+
+  <% end %>
+</div>
