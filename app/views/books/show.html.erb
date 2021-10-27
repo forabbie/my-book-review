@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="row">
+      <%= image_tag @book.book_img.url(:book_index), class: "book_show" %>
+    </div>
+    <div class="row">
+      <span><%# @average_review %></span>
+      <span><%# @book.reviews.count %>/ reviewed</span>
+    </div>
+    <div class="row">
+      <%= link_to "Back", root_path, class: 'col btn btn-secondary' %> 
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="row">
+      <h2><%= @book.title %></h2>
+    </div>
+    <div class="row">
+      <p><%= @book.description %></p>
+    </div>
+    <div class="row mb-3">
+      <span><strong>Author: </strong><%= @book.author %></span>
+      <span><strong>Genre: </strong><%# @book.country %></span>
+      <span><strong>Published: </strong><%= @book.published_at %></span>
+      <span><strong>Country: </strong><%= @book.country %></span>
+    </div>
+    <div class="row">
+        <%= link_to "Edit", edit_book_path(@book),
+          class: 'col m-2 btn btn-warning' %> 
+        <%= link_to "Delete", book_path(@book), 
+          method: :delete, 
+          data: { confirm: "Are you sure?" },
+          class: 'col m-2 btn btn-danger' %>
+    </div>
+    <div class="row">
+      <%# render @book.reviews %>
+      <div>
+        <%# link_to 'Add Review', new_book_review_path(@book) %>
+      </div>
+    </div>
+  </div>
+</div>
+

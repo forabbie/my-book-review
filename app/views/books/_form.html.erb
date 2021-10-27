@@ -1,0 +1,30 @@
+<%= form_with(model: book) do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, { class: "form-label"} %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :description, { class: "form-label" } %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :author, { class: "form-label"} %>
+    <%= f.text_field :author, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :published_date, { class: "form-label"} %>
+    <%= f.date_field :published_at, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :country, { class: "form-label"} %>
+    <%= f.text_field :country, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :book_image, { class: "form-label"} %>
+    <%= f.file_field :book_img, class: 'form-control' %>
+  </div>
+  <div class="col-auto">
+    <%= link_to 'Cancel', root_path, class: 'btn btn-danger mb-3' %>
+    <%= f.button :submit, class: 'btn btn-secondary mb-3' %>
+  </div>
+<% end %>
